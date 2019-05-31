@@ -2,7 +2,7 @@
 
 date="2019-05-28"
 # config
-working_dir='/data'
+working_dir=`echo ~`
 index="fastscore-request-$date"
 url="https://search-fastscore-elk-3kzdgbwljq5uuidkfpneezmqie.us-west-2.es.amazonaws.com/$index"
 dir=$working_dir/fastscore-requests/$index

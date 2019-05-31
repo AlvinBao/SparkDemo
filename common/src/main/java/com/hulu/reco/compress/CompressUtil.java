@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
  * <p>
  * First compress using gzip, then encode using standard base64
  */
-class CompressUtil {
+public class CompressUtil {
     private static final Charset UTF_8 = Charsets.UTF_8;
 
     public static String compress(String str) {

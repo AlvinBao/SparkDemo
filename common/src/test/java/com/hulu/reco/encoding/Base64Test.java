@@ -3,6 +3,8 @@ package com.hulu.reco.encoding;
 import com.google.common.base.Charsets;
 import org.junit.Test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.Charset;
 
 import static org.junit.Assert.assertArrayEquals;
