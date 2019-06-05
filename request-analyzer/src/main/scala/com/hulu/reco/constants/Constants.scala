@@ -1,4 +1,4 @@
-package com.hulu.reco.analyzer.constants
+package com.hulu.reco.constants
 
 object Constants {
   // job params

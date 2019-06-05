@@ -8,12 +8,12 @@ $spark --spark-version 2.1.2-Scala2.11 \
        --master yarn \
        --deploy-mode cluster \
        --queue spark \
-       --num-executors 5 \
+       --num-executors 100 \
        --conf spark.driver.cores=4 \
        --conf spark.driver.memory=4g \
        --conf spark.executor.cores=4 \
        --conf spark.executor.memory=16g \
        --conf spark.execution.date=$execution_date \
-       --class com.hulu.reco.analyzer.main.RequestParseMain\
+       --class com.hulu.reco.main.RequestParseMain\
        $jar
 

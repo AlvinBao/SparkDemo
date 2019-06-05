@@ -1,4 +1,4 @@
-package com.hulu.reco.analyzer.model
+package com.hulu.reco.model
 
 import com.hulu.reco.compress.CompressUtil;
 

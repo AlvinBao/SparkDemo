@@ -8,6 +8,10 @@ import static org.junit.Assert.assertNotNull;
 
 public class GZipTest {
 
+    public GZipTest() {
+        System.out.println("Constructs GZipTest");
+    }
+
     @Test
     public void testNotNull() {
         byte[] bytes = "Hello World".getBytes();
@@ -24,6 +28,4 @@ public class GZipTest {
         byte[] decompressed = GZip.decompress(compressed);
         assertArrayEquals(bytes, decompressed);
     }
-
-
 }

@@ -1,8 +1,8 @@
-package com.hulu.reco.analyzer.main
+package com.hulu.reco.main
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.hulu.reco.analyzer.constants.{Constants, TableRequestsParsed, TableRequestsRaw}
-import com.hulu.reco.analyzer.model.{ESDocument, ParsedRequest}
+import com.hulu.reco.constants.{Constants, TableRequestsParsed, TableRequestsRaw}
+import com.hulu.reco.model.{ESDocument, ParsedRequest}
 import com.hulu.reco.spark.HiveUtils
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{Row, SparkSession}
@@ -20,7 +20,7 @@ object RequestParseMain {
        """.stripMargin
     val jsonDF = spark.sql(sql)
     import spark.implicits._
-    val parsed = jsonDF.map(jsonParse).toDF(TableRequestsParsed.columns(): _*)
+    val parsed = jsonDF.map(jsonParse).toDF(TableRequestsParsed.cols: _*)
     HiveUtils.insertOverwritePartition(
       spark,
       parsed,

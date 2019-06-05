@@ -3,8 +3,6 @@ package com.hulu.reco.encoding;
 import com.google.common.base.Charsets;
 import org.junit.Test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.charset.Charset;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -35,4 +33,16 @@ public class Base64Test {
         String str = new String(decoded, charset);
         assertEquals(str, before);
     }
+
+
+    @Test
+    public void test() {
+        String s1 = "12345";
+        String s2 = "12345";
+        String s3 = new String("12345");
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+
+    }
+
 }

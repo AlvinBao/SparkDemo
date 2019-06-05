@@ -1,9 +1,9 @@
-package com.hulu.reco.analyzer.constants
+package com.hulu.reco.constants
 
 import org.apache.spark.sql.types.{StructField, _}
 
 
-object TableRequestsParsed {
+object TableRequestsParsed extends TableConstants {
   val TABLE_NAME = "reco.fastscore_requests_parsed"
   val COL_LOG_ID = "log_id"
   // user related
@@ -29,7 +29,7 @@ object TableRequestsParsed {
   // partition column
   val COL_DS = "ds"
 
-  def schema(): StructType = {
+  override def schema(): StructType = {
     val fields =
       StructField(COL_LOG_ID, StringType) ::
         StructField(COL_USER_ID, IntegerType) ::
@@ -53,7 +53,7 @@ object TableRequestsParsed {
     StructType(fields)
   }
 
-  def columns(): Array[String] = {
-    schema().fieldNames
+  override def name: String = {
+    TABLE_NAME
   }
 }
